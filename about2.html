@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - Eco Fusion Marketing</title>
+    <!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('team-background.jpg') no-repeat center center fixed;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 10px auto;
+            padding: 10px;
+            background-color: rgba(255, 255, 255, 0.9);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            text-align: center;
+            color: #0056b3;
+            margin-bottom: 20px;
+        }
+        .content {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .team {
+            display: flex;
+            overflow-x: auto;
+            scroll-behavior: smooth;
+        }
+        .team-member {
+            flex: 0 0 180px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 0 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            max-width: 80px;
+            height: auto;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .team-member p {
+            color: #777;
+            font-size: 12px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <h1>About us</h1>
+        <div class="content">
+            <p>Welcome to Eco Fusion Marketing! We are dedicated to providing the best service possible. Our team of experts works tirelessly to meet your needs and exceed your expectations. We believe in innovation, integrity, and excellence in all that we do.</p>
+            <p>Our mission is to deliver high-quality products and services that improve the lives of our customers. We are passionate about our work and are committed to continuous improvement and customer satisfaction.</p>
+        </div>
+
+        <div class="section">
+            <h2>Mission & Vision</h2>
+            <p>Our mission is to drive sustainable growth for our clients through innovative marketing solutions that emphasize environmental responsibility and community impact.</p>
+            <p>Our vision is to be a global leader in eco-friendly marketing, inspiring a positive change in the industry and contributing to a healthier planet.</p>
+        </div>
+
+        <div class="section">
+            <h2>Core Values</h2>
+            <ul>
+                <li><strong>Integrity:</strong> We uphold the highest standards of honesty and transparency in all our actions.</li>
+                <li><strong>Innovation:</strong> We continuously seek out new and creative solutions to meet our clients' needs.</li>
+                <li><strong>Excellence:</strong> We strive for perfection in every project, ensuring the highest quality results.</li>
+                <li><strong>Sustainability:</strong> We are committed to eco-friendly practices and minimizing our environmental impact.</li>
+                <li><strong>Customer Focus:</strong> We prioritize our clients' needs and work tirelessly to exceed their expectations.</li>
+            </ul>
+        </div>
+
+        <h2>Our Team</h2>
+        <div class="team" id="team">
+            <div class="team-member">
+                <img src="mem1.jpg" alt="T.TEJASARI">
+                <h3>T.TEJASRI</h3>
+                <p>Eco Fusion Marketing is where visionary leadership meets environmental stewardship. Our commitment to transparency sets us apart in the marketing industry.</p>
+            </div>
+            <div class="team-member">
+                <img src="mem2.jpg" alt="D.S.V.R.PRIYA">
+                <h3>D.S.V.R.PRIYA</h3>
+                <p>Eco Fusion Marketing empowers brands to achieve their goals sustainably. I’m passionate about driving change through innovative social media strategies. Our clients' success stories are a testament to our eco-friendly approach.</p>
+            </div>
+            <div class="team-member">
+                <img src="mem3.jpg" alt="M.SASI PRIYANKA">
+                <h3>M.SASI PRIYANKA</h3>
+                <p>At Eco Fusion Marketing, we leverage technology to promote sustainability. We develop platforms that support green initiatives and eco-friendly practices. Innovation and efficiency are at the core of our technology solutions.</p>
+            </div>
+            <div class="team-member">
+                <img src="mem4.jpg" alt="G.LAKSHMI PRIYA">
+                <h3>G.LAKSHMI PRIYA</h3>
+                <p>Eco Fusion Marketing excels in integrating sustainability into daily operations. We strive for efficiency while reducing our carbon footprint. Our green logistics innovations set a new standard in the industry.</p>
+            </div>
+            <div class="team-member">
+                <img src="mem5.jpg" alt="R.VIJAYA DURGA">
+                <h3>R.VIJAYA DURGA</h3>
+                <p>Eco Fusion Marketing is pioneering in green finance and ethical business practices. We offer sustainable investment strategies to drive long-term success. Financial transparency and eco-conscious values are our guiding principles.</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const team = document.getElementById('team');
+        let scrollAmount = 0;
+
+        function autoScroll() {
+            if (scrollAmount >= team.scrollWidth - team.clientWidth) {
+                scrollAmount = 0;
+            } else {
+                scrollAmount += 1;
+            }
+            team.scrollTo({
+                left: scrollAmount,
+                behavior: 'smooth'
+            });
+        }
+
+        setInterval(autoScroll, 50); // Adjust the interval as needed
+    </script>
+</body>
+</html>

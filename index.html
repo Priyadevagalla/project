@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eco Fusion Marketing</title>
+    <link rel="stylesheet" href="./aboutus.css">
+<!-- Include Font Awesome CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            width: 200%;
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+
+        .main-content {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .splash {
+            background-color: green; 
+            color: white;
+            width: 50%;
+            height: 100vh;     
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand-name {
+            font-size: 5rem;
+            font-weight: bold;
+        }
+
+        .main-content {
+            display: none; /* Initially hidden */
+            color: black;
+            overflow-y: auto; 
+        }
+
+        header {
+            width: 100%;
+            background-color: black; /* Background color for the navbar */
+            border-bottom: 2px solid #ccc; /* Border bottom style */
+            position: sticky;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0rem 2rem;
+            box-sizing: border-box;
+        }
+
+        .logo img {
+            height: 60px;
+            width: auto;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            margin: 0;
+            padding: 0;
+        }
+
+        .nav-links li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-size: 1rem;
+        }
+
+        .intro {
+            text-align: center;
+            margin-top: 10px;
+            padding: 2rem;
+            background: url('bg.jpg') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        .intro h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .intro p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+        }
+
+        .cards {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .card {
+            background-color: white;
+            color: #333;
+            padding: 1.5rem;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+
+        .card h3 {
+            margin-top: 0;
+        }
+
+        .card p {
+            margin-bottom: 1.5rem;
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #333;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .button:hover {
+            background-color: #555;
+        }
+
+        footer {
+            background-color: transparent; 
+            color: black;
+            text-align: center;
+            padding: 1rem 2rem;
+            width: 100%;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .footer-links a {
+            color: black;
+            text-decoration: none;
+        }
+
+               /* Centering content in About Us section */
+        .container_aboutus {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .container_aboutus .content, .container_aboutus .section {
+            max-width: 800px;
+            text-align:center;
+        }
+        
+       .team-member {
+            flex: 0 0 180px;
+            background-color: #f9f9f9;
+            padding: 10px;
+            margin: 0 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            border-radius: 10px;
+        }
+        .team-member img {
+            border-radius: 50%;
+            max-width: 80px;
+            height: auto;
+        }
+        .team-member h3 {
+            margin: 10px 0;
+            color: #333;
+        }
+        .team-member p {
+            color: #777;
+            font-size: 12px;
+        }
+        .section {
+            margin: 30px 0;
+        }
+       
+.contact-container {
+            width: 100%;
+            padding: 2rem;
+            background-color: white;
+            border-radius: 0;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .brand {
+            text-align: center;
+            font-weight: 300;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .brand span {
+            color: #ffffff;
+        }
+
+        .wrapper {
+            box-shadow: 0 0 20px 0 rgba(57, 82, 163, 0.7);
+            border-radius: 4px;
+        }
+
+        .wrapper>* {
+            padding: 1em;
+        }
+
+        .company-info {
+            background: #C3C9DD;
+            text-align: center;
+        }
+
+        .company-info h3,
+        .company-info ul {
+            margin: 0 0 1rem 0;
+        }
+
+        .contact {
+            background: #dcdfea;
+            text-align: center;
+        }
+
+        .contact form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-gap: 20px;
+        }
+
+        .contact form label {
+            display: block;
+            font-weight: bold;
+        }
+
+        .contact form p {
+            margin: 0;
+        }
+
+        .contact form .full {
+            grid-column: 1 / 3;
+        }
+
+        .contact form button,
+        .contact form input,
+        .contact form textarea {
+            width: 100%;
+            padding: 1em;
+            border: solid 1px #627EDC;
+            border-radius: 4px;
+        }
+
+        .contact form textarea {
+            resize: none;
+        }
+
+        .contact form button {
+            background: #627EDC;
+            border: 0;
+            color: #e4e4e4;
+            text-transform: uppercase;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+.contact-heading {
+    text-align: center;
+    margin-top: 0; /* Reset margin if needed */
+    padding-top: 20px; /* Adjust as needed for spacing */
+    color: #333; /* Adjust color as per your design */
+}
+
+
+
+        .contact form button:hover,
+        .contact form button:focus {
+            background: #3952a3;
+            color: #ffffff;
+            outline: 0;
+            transition: background-color 0.3s ease-out;
+        }
+
+        @media only screen and (min-width: 700px) {
+            .wrapper {
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+            }
+
+            .wrapper>* {
+                padding: 2em;
+            }
+
+                   }
+.company-info h3,
+        .company-info ul {
+            text-align: center;
+            margin: 0 0 1rem 0;
+        }
+        
+        .company-info ul li {
+            font-style: italic;
+        }
+         .company-info {
+                border-radius: 4px 0 0 4px;
+            }
+        
+            .contact {
+                border-radius: 0 4px 4px 0;
+            }
+        
+            .company-info h3,
+            .company-info ul,
+            .brand {
+                text-align: left;
+            }
+        }
+footer {
+    background-color: transparent; 
+    color: black;
+    text-align: center;
+    padding: 1rem 2rem;
+    width: 100%;
+    overflow-y: hidden; /* Prevent vertical scrollbar */
+}
+
+
+
+    </style>
+
+    <script>
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.querySelector('.container').style.transform = 'translateX(-50%)';
+                setTimeout(function() {
+                    document.querySelector('.main-content').style.display = 'flex';
+                }, 500); // Wait for the slide transition to finish before displaying main content
+            }, 1000);
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="splash">
+            <h1 class="brand-name">ECO FUSION MARKETING</h1>
+        </div>
+        <div class="main-content">
+            <header>
+                <div class="logo">
+                    <img src="C:\Users\priya\OneDrive\Desktop\project\logo3.jpg" alt="Eco Fusion Logo">
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="about2.html">About Us</a></li>
+                    <li><a href="shop.html">Shop</a></li>
+                    <li><a href="contact1.html">Contact Us</a></li>
+                    <li><a href="logsign.html" class="oval-link">SIGNUP/LOGIN</a></li>
+                </ul>
+            </header>
+            <main>
+                <section class="intro">
+                    <h2>We have a passion in creating new and unique spaces</h2>
+                    <p>Connecting Local Farmers, Artisans, and Consumers for a Sustainable Future.</p>
+                    <div class="cards">
+                        <div class="card">
+                            <h3>ORGANIC FOODS</h3>
+                            <img src="organicfood.jpg" alt="Organic Food">
+                            <p>Organic food is grown without synthetic pesticides, fertilizers, or genetically modified organisms, offering a healthier option for you and your family while promoting better health and environmental sustainability.</p>
+                            <a href="foods.html" class="button">Shop Now</a>
+                        </div>
+                        <div class="card">
+                            <h3>HANDLOOM SAREES</h3>
+                            <img src="handloomsarees.jpg" alt="Handmade Dresses">
+                            <p>The saree is a classic article of apparel created in India on handlooms. Sarees are regarded as an emblem of India's illustrious craft tradition because of their cultural significance, dexterity, and skill.</p>
+                            <a href="saree3.html" class="button">Shop Now</a>
+                        </div>
+                        <div class="card">
+                            <h3>FAMOUS SWEETS</h3>
+                            <img src="C:/Users/priya/OneDrive/Desktop/project/Famous Sweets.jpg" alt="Famous Sweets">
+                            <p>India is famous for its wide variety of desserts, many of which have been made using milk, sugar,and nuts. These delicious treats are an essential component of Indian celebrations, festivities, and everyday life.</p>
+                            <a href="sweets.html" class="button">Shop Now</a>
+                        </div>
+                    </div>
+                </section>
+            </main>
+            <div class="container_aboutus">
+                <h1>About us</h1>
+                <div class="content">
+                    <p>Welcome to Eco Fusion Marketing! We are dedicated to providing the best service possible. Our team of experts works tirelessly to meet your needs and exceed your expectations. We believe in innovation, integrity, and excellence in all that we do.</p>
+                    <p>Our mission is to deliver high-quality products and services that improve the lives of our customers. We are passionate about our work and are committed to continuous improvement and customer satisfaction.</p>
+                </div>
+        
+                <div class="section">
+                    <h2>Mission & Vision</h2>
+                    <p>Our mission is to drive sustainable growth for our clients through innovative marketing solutions that emphasize environmental responsibility and community impact.</p>
+                    <p>Our vision is to be a global leader in eco-friendly marketing, inspiring a positive change in the industry and contributing to a healthier planet.</p>
+                </div>
+        
+                <div class="section">
+                    <h2>Core Values</h2>
+                    <ul>
+                        <li><strong>Integrity:</strong> We uphold the highest standards of honesty and transparency in all our actions.</li>
+                        <li><strong>Innovation:</strong> We continuously seek out new and creative solutions to meet our clients' needs.</li>
+                        <li><strong>Excellence:</strong> We strive for perfection in every project, ensuring the highest quality results.</li>
+                        <li><strong>Sustainability:</strong> We are committed to eco-friendly practices and minimizing our environmental impact.</li>
+                        <li><strong>Customer Focus:</strong> We prioritize our clients' needs and work tirelessly to exceed their expectations.</li>
+                    </ul>
+                </div>
+        
+                <h2>Our Team</h2>
+                <div class="team" id="team">
+                    <div class="team-member">
+                        <img src="mem1.jpg" alt="T.TEJASARI">
+                        <h3>T.TEJASRI</h3>
+                        <p>Eco Fusion Marketing is where visionary leadership meets environmental stewardship. Our commitment to transparency sets us apart in the marketing industry.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="mem2.jpg" alt="D.S.V.R.PRIYA">
+                        <h3>D.S.V.R.PRIYA</h3>
+                        <p>Eco Fusion Marketing empowers brands to achieve their goals sustainably. I’m passionate about driving change through innovative social media strategies. Our clients' success stories are a testament to our eco-friendly approach.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="mem3.jpg" alt="M.SASI PRIYANKA">
+                        <h3>M.SASI PRIYANKA</h3>
+                        <p>At Eco Fusion Marketing, we leverage technology to promote sustainability. We develop platforms that support green initiatives and eco-friendly practices. Innovation and efficiency are at the core of our technology solutions.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="mem4.jpg" alt="G.LAKSHMI PRIYA">
+                        <h3>G.LAKSHMI PRIYA</h3>
+                        <p>Eco Fusion Marketing excels in integrating sustainability into daily operations. We strive for efficiency while reducing our carbon footprint. Our green logistics innovations set a new standard in the industry.</p>
+                    </div>
+                    <div class="team-member">
+                        <img src="mem5.jpg" alt="R.VIJAYA DURGA">
+                        <h3>R.VIJAYA DURGA</h3>
+                        <p>Eco Fusion Marketing is pioneering in green finance and ethical business practices. We offer sustainable investment strategies to drive long-term success. Financial transparency and eco-conscious values are our guiding principles.</p>
+                    </div>
+                </div>
+            </div>
+            <script>
+                const team = document.getElementById('team');
+                let scrollAmount = 0;
+        
+                function autoScroll() {
+                    if (scrollAmount >= team.scrollWidth - team.clientWidth) {
+                        scrollAmount = 0;
+                    } else {
+                        scrollAmount += 1;
+                    }
+                    team.scrollTo({
+                        left: scrollAmount,
+                        behavior: 'smooth'
+                    });
+                }
+        
+                setInterval(autoScroll, 50); // Adjust the interval as needed
+            </script>
+
+            <!-- Contact Us Form -->
+
+           <div class="contact-container">
+           <h1 class="contact-heading">Contact Us</h1>
+        <h2 class="brand"><span>Eco Fusion Marketing</span></h2>
+        <div class="wrapper">
+            <div class="company-info">
+                <h3>Eco Fusion Marketing</h3>
+                 <ul>
+                    <li><i class="fas fa-map-marker-alt"></i><a href="https://www.google.com/maps/place/ELITE+SOLUTIONS/@17.6934724,83.1894873,17z/data=!3m1!4b1!4m6!3m5!1s0x3a396919a8827629:0xc63e22dee738cdec!8m2!3d17.6934724!4d83.1920622!16s%2Fg%2F11ld96d_86?entry=ttu">Elite Solutions,<br>  Vizag, Auto Nagar.</a></li>
+                    <li><i class="fas fa-phone"></i> (+91) 9347xxxxxx,</li>
+                    <li><i class="fas fa-envelope"></i> ecofusion@gmail.com</li>
+                </ul>
+
+            </div>
+            <div class="contact">
+                <h3>Email Us</h3>
+                <form id="contact-form">
+                     <p>
+                        <label>Name</label>
+                        <input type="text" name="name" id="name" required>
+                    </p>
+                    <p>
+                        <label>Company</label>
+                        <input type="text" name="company" id="company">
+                    </p>
+                    <p>
+                        <label>E-mail Address</label>
+                        <input type="email" name="email" id="email" required>
+                    </p>
+                    <p>
+                        <label>Phone Number</label>
+                        <input type="text" name="phone" id="phone">
+                    </p>
+                    <p class="full">
+                        <label>Message</label>
+                        <textarea name="message" rows="5" id="message"></textarea>
+                    </p>
+                    <p class="full">
+                        <button type="submit"><span>Submit</span></button>
+                    </p>
+
+                </form>
+            </div>
+        </div>
+    </div>
+            <footer>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="contact1.html">Contact Us</a>
+                </div>
+                <p>© 2024 Eco Fusion Marketing. All Rights Reserved.</p>
+            </footer>
+        </div>
+    </div>
+</body>
+</html>

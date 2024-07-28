@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Foods - Eco Fusion Shop</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .header {
+            background-color: #3952a3;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        .header .cart-icon {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            font-size: 24px;
+            cursor: pointer;
+        }
+        .nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px 0;
+        }
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .container {
+            margin-top: 150px; /* Adjusted for fixed header and nav */
+            padding: 20px;
+        }
+        .section {
+            margin-bottom: 40px;
+        }
+        .products {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .product {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 5px;
+            width: calc(33.333% - 20px);
+            box-sizing: border-box;
+        }
+        .product img {
+            max-width: 100%;
+            height: auto;
+        }
+        .product h3 {
+            margin: 10px 0;
+        }
+        .product .price {
+            color: #4CAF50;
+            font-size: 18px;
+            margin: 10px 0;
+        }
+        .product .rating .star {
+            color: gold;
+        }
+        .product .reviews {
+            font-size: 14px;
+            color: #888;
+        }
+        .cart {
+            display: none;
+            position: fixed;
+            top: 0;
+            right: 0;
+            width: 300px;
+            height: 100%;
+            background: white;
+            box-shadow: -2px 0 5px rgba(0,0,0,0.5);
+            padding: 20px;
+            box-sizing: border-box;
+            z-index: 1001;
+            overflow-y: auto;
+        }
+        .cart h2 {
+            margin-top: 0;
+        }
+        .cart-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .cart-total {
+            font-size: 20px;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+      
+        <div class="cart-icon" onclick="toggleCart()">🛒 (<span id="cart-count">0</span>)</div>
+        <div class="nav">
+            <h1>Eco Fusion Shop</h1>        </div>
+    </div>
+    
+    <div class="container">
+       <!-- Handloom Sarees Section -->
+        <div id="handloom-sarees" class="section">
+            <h2>Handloom Sarees</h2>
+            <p>Explore our exclusive collection of handloom sarees, meticulously crafted by skilled artisans using traditional techniques. Each saree tells a unique story of craftsmanship and tradition.</p>
+              <div class="products">
+                <div class="product" data-name="Upadda Saree" data-price="2500">
+                    <div class="product-image">
+                        <img src="uppada.jpg" alt="Upadda Saree" style="width: 300px; height: 300px;>
+                    </div>
+                    <div class="product-details">
+                        <h3>Upadda Sarees</h3>
+                        <p class="price">Rs. 2500.00</p>
+                        <p class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="reviews">(5)</span>
+                        </p>
+                        <button onclick="addToCart(this)">Add to cart</button>
+                    </div>
+                </div>
+                <div class="product" data-name="Venkatgiri  Saree" data-price="3500">
+                    <div class="product-image">
+                        <img src="venkatagiri.jpg" alt="Venkatgiri Saree" style="width: 300px; height: 300px;>
+                    </div>
+                    <div class="product-details">
+                        <h3>Venkatgiri Sarees</h3>
+                        <p class="price">Rs. 3500.00</p>
+                        <p class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="reviews">(3)</span>
+                        </p>
+                        <button onclick="addToCart(this)">Add to cart</button>
+                    </div>
+                </div>
+                <div class="product" data-name="Dharmavaram Saree" data-price="2200">
+                    <div class="product-image">
+                        <img src="dharmavaram.jpg" alt="Dharmavaram Saree" style="width: 300px; height: 300px;>
+                    </div>
+                    <div class="product-details">
+                        <h3>Dharmavaram Sarees</h3>
+                        <p class="price">Rs. 2200.00</p>
+                        <p class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="reviews">(4)</span>
+                        </p>
+                        <button onclick="addToCart(this)">Add to cart</button>
+                    </div>
+                </div>
+                <div class="product" data-name="Pochampally ikkat silk Saree" data-price="3500">
+                    <div class="product-image">
+                        <img src="pochampally.jpg" alt="Pochampally ikkat Silk Saree" style="width: 300px; height: 300px;>
+                    </div>
+                    <div class="product-details">
+                        <h3>Pochampally ikkat silk Sarees</h3>
+                        <p class="price">Rs. 3500.00</p>
+                        <p class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="reviews">(3)</span>
+                        </p>
+                        <button onclick="addToCart(this)">Add to cart</button>
+                    </div>
+                </div>
+               <div class="product" data-name="Gadwal silk sarees" data-price="3500">
+                    <div class="product-image">
+                        <img src="C:\Users\priya\OneDrive\Desktop\project\project\gadwal.jpg" alt="Gadwal silk sarees" style="width: 300px; height: 300px;>
+                    </div>
+                    <div class="product-details">
+                        <h3>Gadwal silk sarees</h3>
+                        <p class="price">Rs. 3500.00</p>
+                        <p class="rating">
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star filled">&#9733;</span>
+                            <span class="star">&#9733;</span>
+                            <span class="reviews">(3)</span>
+                        </p>
+                        <button onclick="addToCart(this)">Add to cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+   
+
+    <div id="cart" class="cart">
+        <h2>Shopping Cart</h2>
+        <div id="cart-items"></div>
+        <p class="cart-total">Total: Rs. <span id="cart-total">0.00</span></p>
+        <button onclick="checkout()">Checkout</button>
+    </div>
+
+   <script>
+        let cart = [];
+
+        function addToCart(button) {
+            const productElement = button.closest('.product');
+            const name = productElement.dataset.name;
+            const price = parseFloat(productElement.dataset.price);
+
+            const existingItem = cart.find(item => item.name === name);
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                cart.push({ name, price, quantity: 1 });
+            }
+
+            updateCart();
+        }
+
+        function updateCart() {
+            const cartItemsContainer = document.getElementById('cart-items');
+            cartItemsContainer.innerHTML = '';
+
+            let total = 0;
+            cart.forEach(item => {
+                total += item.price * item.quantity;
+                const cartItemElement = document.createElement('div');
+                cartItemElement.className = 'cart-item';
+                cartItemElement.innerHTML = `
+                    <div class="cart-item-details">
+                        <span>${item.name}</span>
+                        <span>Rs. ${item.price.toFixed(2)}</span>
+                        <span>Quantity: ${item.quantity}</span>
+                    </div>
+                    <div class="cart-item-controls">
+                        <button onclick="changeQuantity('${item.name}', 1)">+</button>
+                        <button onclick="changeQuantity('${item.name}', -1)">-</button>
+                        <button onclick="removeFromCart('${item.name}')">Remove</button>
+                    </div>
+                `;
+                cartItemsContainer.appendChild(cartItemElement);
+            });
+
+            document.getElementById('cart-total').textContent = total.toFixed(2);
+            document.getElementById('cart-count').textContent = cart.reduce((acc, item) => acc + item.quantity, 0);
+        }
+
+        function changeQuantity(name, delta) {
+            const item = cart.find(item => item.name === name);
+            if (item) {
+                item.quantity += delta;
+                if (item.quantity <= 0) {
+                    removeFromCart(name);
+                }
+                updateCart();
+            }
+        }
+
+        function removeFromCart(name) {
+            cart = cart.filter(item => item.name !== name);
+            updateCart();
+        }
+
+        function toggleCart() {
+            const cartElement = document.getElementById('cart');
+            cartElement.style.display = cartElement.style.display === 'none' || cartElement.style.display === '' ? 'block' : 'none';
+        }
+
+
+        function checkout() {
+            if(cart.length === 0){
+                alert('please add items');
+                return;
+            }
+            // else{
+            alert('Thank you for your purchase!');
+            cart = [];
+            updateCart();
+            toggleCart();
+            // }
+        }
+    </script>
+
+</body>
+</html>
